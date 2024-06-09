@@ -23,7 +23,7 @@ class Contact
             char *darkest_secret);
 
     void    display();
-    void    _print_truncated_str();
+    void    _print_truncated_str(const char *field);
 };
 
 #endif
