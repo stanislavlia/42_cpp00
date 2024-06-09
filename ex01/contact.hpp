@@ -1,30 +1,32 @@
-#ifndef PHONEBOOK_HPP
-#define PHONEBOOK_HPP
+#ifndef CONTACT_HPP
+#define CONTACT_HPP
 
 #include <iostream>
+#include <string>
+#include <iomanip>
 
 class Contact
 {
-    private:
-        char *phone_number;
-        char *darkest_secret;
+private:
+    std::string firstname;
+    std::string lastname;
+    std::string nickname;
+    std::string phone_number;
+    std::string darkest_secret;
+    int         index;
 
-    public:
-        int index;
-        char *firstname;
-        char *lastname;
-        char *nickname;
-    
-    Contact(int index,
-            char *firstname, 
-            char *lastname, 
-            char *nickname,
-            char *phone_number,
-            char *darkest_secret);
+    std::string _print_truncated_str(const std::string& str) const;
 
-    void    display_as_row();
-    void    display_full();
-    void    _print_truncated_str(const char *field);
+public:
+    Contact(int index, 
+            const std::string& firstname, 
+            const std::string& lastname, 
+            const std::string& nickname,
+            const std::string& phone_number,
+            const std::string& darkest_secret);
+
+    void display_as_row() const;
+    void display_full() const;
 };
 
-#endif
+#endif // CONTACT_HPP
