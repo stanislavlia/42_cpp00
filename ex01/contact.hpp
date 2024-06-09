@@ -22,7 +22,8 @@ class Contact
             char *phone_number,
             char *darkest_secret);
 
-    void    display();
+    void    display_as_row();
+    void    display_full();
     void    _print_truncated_str(const char *field);
 };
 

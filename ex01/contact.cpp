@@ -42,7 +42,7 @@ void Contact::_print_truncated_str(const char *field)
     std::cout << "|";
 }
 
-void Contact::display()
+void Contact::display_as_row()
 {   
     //to print index 
     char index_str[2];
@@ -56,6 +56,18 @@ void Contact::display()
     std::cout << std::endl;
 }
 
+void Contact::display_full()
+{
+    std::cout << "Index: " << this->index << std::endl;
+    std::cout << "First Name: " << this->firstname << std::endl;
+    std::cout << "Last Name: " << this->lastname << std::endl;
+    std::cout << "Nickname: " << this->nickname << std::endl;
+    std::cout << "Phone Number: " << this->phone_number << std::endl;
+    std::cout << "Darkest Secret: " << this->darkest_secret << std::endl;
+}
+
+
+
 int main()
 {
     // Create two instances of Contact
@@ -64,9 +76,11 @@ int main()
 
 
 
-    contact1.display();
-    contact2.display();
-    contact1.display();
+    contact1.display_as_row();
+    contact2.display_as_row();
+    contact1.display_as_row();
+
+    contact2.display_full();
 
     return 0;
 }
