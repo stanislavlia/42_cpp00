@@ -6,6 +6,7 @@ int main()
     std::string input = "";
     PhoneBook book;
 
+    book.welcome_msg();
     while (input.compare("EXIT"))
     {
         std::cout << ">>>";

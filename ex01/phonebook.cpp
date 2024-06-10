@@ -39,6 +39,16 @@ void PhoneBook::list_contacts() const
         this->contacts[i].display_as_row();
 }
 
+void PhoneBook::welcome_msg() const
+{   
+    std::cout << "===============================" << std::endl;
+    std::cout << "Hi! I am your Phone Book! Use the following command to interact with me" << std::endl;
+    std::cout << "ADD - opens interface to add a new contact" << std::endl;
+    std::cout << "SEARCH - list all contacts and provide more details by index" << std::endl;
+    std::cout << "EXIT - terminate session" << std::endl;
+    std::cout << "===============================" << std::endl;
+};
+
 void PhoneBook::add_contact()
 {
     int idx = this->curr_idx % 8;
