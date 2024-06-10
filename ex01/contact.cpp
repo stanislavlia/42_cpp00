@@ -20,7 +20,8 @@ std::string Contact::_get_input(const std::string str) const
 }
 
 void Contact::fill_data()
-{
+{   
+    std::cout << "Fill in data about your contact:" << std::endl;
     this->firstname = this->_get_input("Enter firstname >>>");
     this->lastname = this->_get_input("Enter lastname >>>");
     this->nickname = this->_get_input("Enter nickname >>>");
@@ -62,22 +63,22 @@ void Contact::display_full() const
 }
 
 
-int main() 
-{
-    // Create two instances of Contact
-    Contact contact1;
-    Contact contact2;
+// int main() 
+// {
+//     // Create two instances of Contact
+//     Contact contact1;
+//     Contact contact2;
 
 
-    contact1.fill_data();
-    contact1.display_as_row();
-    // contact2.display_as_row();
+//     contact1.fill_data();
+//     contact1.display_as_row();
+//     // contact2.display_as_row();
 
-    // std::cout << "\nContact 1 full details:\n";
-    // contact1.display_full();
+//     // std::cout << "\nContact 1 full details:\n";
+//     // contact1.display_full();
 
-    // std::cout << "\nContact 2 full details:\n";
-    // contact2.display_full();
+//     // std::cout << "\nContact 2 full details:\n";
+//     // contact2.display_full();
 
-    return 0;
-}
+//     return 0;
+// }
