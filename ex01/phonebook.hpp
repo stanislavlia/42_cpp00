@@ -2,12 +2,13 @@
 #define PHONEBOOK_HPP
 
 #include "contact.hpp"
+#include <limits>
 
 class PhoneBook
 {
     private:
         Contact contacts[8];
-        void    _read_input() const;
+        int    _read_input() const;
         int     curr_idx;
     
     public:

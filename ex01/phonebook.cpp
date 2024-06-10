@@ -12,10 +12,25 @@ PhoneBook::~PhoneBook()
 
 };
 
-void PhoneBook::_read_input() const
+int PhoneBook::_read_input() const
 {
-    //reads input and takes actions
+    int idx = -1;
+    bool    valid = false;
 
+    while (!valid)
+    {
+        std::cout << "Enter index to display>>>";
+        std::cin >> idx;
+        if (std::cin.good() && (idx >= 0 && idx <= 8))
+            valid = true;
+        else
+        {   
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(),'\n');
+            std::cout << "Incorrect index, re-enter again" << std::endl;
+        }
+    }
+    return idx;
 };
 
 void PhoneBook::list_contacts() const
@@ -32,13 +47,33 @@ void PhoneBook::add_contact()
     this->curr_idx = (this->curr_idx + 1) % 8;
 }
 
-
-
-int main()
+void PhoneBook::search() const
 {
-    PhoneBook book;
+    int index;
 
-    book.add_contact();
-    book.add_contact();
-    book.list_contacts();
-}
+    std::cout << "Here's the list of all contacts:" << std::endl;
+    this->list_contacts();
+    index = this->_read_input();
+    std::cout << "Contact: " << std::endl;
+    this->contacts[index].display_full();
+};
+
+
+
+// int main()
+// {
+//     PhoneBook book;
+
+//     book.add_contact();
+//     book.add_contact();
+//     book.add_contact();
+//     book.add_contact();
+//     book.add_contact();
+//     book.add_contact();
+//     book.add_contact();
+//     book.add_contact();
+//     book.add_contact();
+//     book.add_contact();
+//     book.search();
+    
+// }
