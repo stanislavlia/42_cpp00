@@ -10,7 +10,7 @@ Contact::~Contact()
 
 };
 
-std::string Contact::_get_input(const std::string str) const 
+std::string Contact::_get_input(const std::string& str) const 
 {
     std::cout << str;
     std::string field;

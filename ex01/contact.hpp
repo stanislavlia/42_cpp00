@@ -16,7 +16,7 @@ private:
     int         index;
 
     std::string _print_truncated_str(const std::string& str) const;
-    std::string _get_input(const std::string str) const;
+    std::string _get_input(const std::string& str) const;
 
 
 
